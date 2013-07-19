@@ -6,7 +6,36 @@
  * Time: 4:30 PM
  * To change this template use File | Settings | File Templates.
  */
-require_once 'ageVerification.php';
-$age = new AgeVerification();
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Verify Your Age.</title>
+ </head>
+ <body>
+ <div id="form">
+      <table border="0">
+          <form action="ageVerification.php" method="POST">
+              <th colspan="2">Please enter your Date of Birth.</th>
+              <tr>
+                  <td>Month:</td>
+                  <td><input type="text" name="month" maxlength="2" /></td>
+              </tr>
+              <tr>
+                  <td>Day:</td>
+                  <td><input type="text" name="day" maxlength="2" /></td>
+              </tr>
+              <tr>
+                  <td>Year:</td>
+                  <td><input type="text" name="year" maxlength="4"/></td>
+              </tr>
 
-$age -> getAge(11,29,1986);
+              <tr>
+                  <td colspan="2"><input type="submit" name="Submit" /></td>
+              </tr>
+          </form>
+      </table>
+ </div>
+ </body>
+</html>

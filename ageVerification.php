@@ -7,13 +7,21 @@
  * To change this template use File | Settings | File Templates.
  */
 
+    $month = $_POST['month'];
+    $day = $_POST['day'];
+    $year = $_POST['year'];
+
+    $age = new AgeVerification();
+
+    $age -> getAge($month,$day,$year);
+
 class AgeVerification
 {
     protected $today;
     protected $age;
     protected $authorized;
     protected $notOfAgeRedirectLocation = 'index.php';
-    protected $ofAgeRedirectLocation = '';
+    protected $ofAgeRedirectLocation = 'landing-page.html';
 
     function getAge($month, $day, $year)
     {
@@ -30,12 +38,13 @@ class AgeVerification
         {
             $today = date('m-d-o');
             $dateArray = preg_split('/-/', $today);
-            print_r($this -> today = $dateArray);
+            $this -> today = $dateArray;
         }
 
         $this -> age = $this -> today[2] - $year;
         if ($this -> authorized = self::checkAge($this -> age, $month, $day) == true)
         {
+            echo $ofAgeHTMLRedirect;
             echo 'you are old enough, you may be redirected shortly.</body></html>';
         }
         else
