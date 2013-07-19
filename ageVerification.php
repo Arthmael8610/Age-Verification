@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by JetBrains PhpStorm.
- * User: student
+ * User: Micheal Mueller
  * Date: 11/28/12
  * Time: 1:42 PM
  * To change this template use File | Settings | File Templates.
@@ -20,7 +20,7 @@ class AgeVerification
     protected $today;
     protected $age;
     protected $authorized;
-    protected $notOfAgeRedirectLocation = 'index.php';
+    protected $notOfAgeRedirectLocation = 'index.html';
     protected $ofAgeRedirectLocation = 'landing-page.html';
 
     function getAge($month, $day, $year)
